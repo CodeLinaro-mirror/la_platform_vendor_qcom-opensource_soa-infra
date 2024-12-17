@@ -1,0 +1,25 @@
+cc_defaults {
+    name: "vsomeip_daemon_defaults",
+    vendor: true,
+
+    cppflags: [
+        "-std=c++14",
+        "-fexceptions",
+        "-Wno-attributes",
+        "-Wno-unused-variable",
+        "-Wno-unused-parameter",
+        "-Wno-overloaded-virtual"
+    ]
+}
+
+cc_binary {
+    name: "vsomeip_daemon",
+    defaults: ["vsomeip_daemon_defaults"],
+
+    srcs: [
+        "src/vsomeip_daemon_main.cpp"
+    ],
+    local_include_dirs: [
+       "include"
+    ]
+}
