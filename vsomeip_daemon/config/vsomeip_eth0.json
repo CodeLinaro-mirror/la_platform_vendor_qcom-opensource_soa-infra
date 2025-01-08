@@ -1,0 +1,96 @@
+{
+    "unicast" : "192.168.1.3",
+    "device"  : "eth0",
+    "netmask" : "255.255.255.0",
+    "logging" :
+    {
+        "level" : "debug",
+        "console" : "false",
+        "file" : { "enable" : "true", "path" : "/data/vendor/vsomeip_daemon/vsomeip_eth0.log" },
+        "dlt" : "false"
+    },
+    "applications" :
+    [
+        {
+            "name" : "vsomeip_daemon_eth0",
+            "id" : "0x1520"
+        },
+        {
+            "name" : "DemoApp1Service",
+            "id" : "0x1277"
+        },
+        {
+            "name" : "DemoApp1Client",
+            "id" : "0x1278"
+        }
+    ],
+    "services" :
+    [
+        {
+            "service" : "0x1234",
+            "instance" : "0x5678",
+            "unreliable" : "30509",
+            "someip-tp": {
+                "service-to-client": ["0x7532"]
+            },
+            "events" :
+            [
+                {
+                    "event" : "0x80F2",
+                    "is_field" : "false"
+                },
+                {
+                    "event" : "0x80F3",
+                    "is_field" : "false"
+                },
+                {
+                    "event" : "0x80F4",
+                    "is_field" : "true",
+                    "update-cycle" : 2000
+                },
+                {
+                    "event" : "0x80F5",
+                    "is_field" : "true",
+                    "update-cycle" : 0
+                }
+            ],
+            "eventgroups" :
+            [
+                {
+                    "eventgroup" : "0x1B58",
+                    "events" : [ "0x80F2"]
+
+                },
+                {
+                    "eventgroup" : "0x1B59",
+                    "events" : [ "0x80F3" ]
+                },
+                {
+                    "eventgroup" : "0x1B5A",
+                    "events" : [ "0x80F4" ]
+                },
+                {
+                    "eventgroup" : "0x1B5B",
+                    "events" : [ "0x80F5" ]
+                }
+            ]
+        }
+    ],
+    "max-payload-size-unreliable" : "15000",
+    "routing" : "vsomeip_daemon_eth0",
+    "network" : "vsomeip_eth0",
+    "service-discovery" :
+    {
+        "enable" : "true",
+        "multicast" : "237.50.20.1",
+        "port" : "30490",
+        "protocol" : "udp",
+        "initial_delay_min" : "10",
+        "initial_delay_max" : "100",
+        "repetitions_base_delay" : "200",
+        "repetitions_max" : "3",
+        "cyclic_offer_delay" : "2000",
+        "request_response_delay" : "1500"
+
+    }
+}

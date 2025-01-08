@@ -1,25 +1,62 @@
+prebuilt_etc {
+    name: "commonapi4someip_default_no_tp.ini",
+    vendor: true,
+    src: "config/commonapi4someip_default_no_tp.ini",
+}
+
+prebuilt_etc {
+    name: "commonapi4someip_default_tp.ini",
+    vendor: true,
+    src: "config/commonapi4someip_default_tp.ini",
+}
+
+prebuilt_etc {
+    name: "vsomeip_vlan1500.json",
+    vendor: true,
+    src: "config/vsomeip_vlan1500.json",
+}
+
+prebuilt_etc {
+    name: "vsomeip_vlan1520.json",
+    vendor: true,
+    src: "config/vsomeip_vlan1520.json",
+}
+
+prebuilt_etc {
+    name: "vsomeip_eth0.json",
+    vendor: true,
+    src: "config/vsomeip_eth0.json",
+}
+
 cc_defaults {
     name: "vsomeip_daemon_defaults",
     vendor: true,
 
     cppflags: [
         "-std=c++14",
-        "-fexceptions",
-        "-Wno-attributes",
-        "-Wno-unused-variable",
         "-Wno-unused-parameter",
-        "-Wno-overloaded-virtual"
-    ]
+    ],
+
+    shared_libs: [
+        "libvsomeip3",
+        "libvsomeip_cfg",
+        "libvsomeip_e2e",
+        "libvsomeip_sd",
+        "liblog",
+    ],
 }
 
 cc_binary {
     name: "vsomeip_daemon",
     defaults: ["vsomeip_daemon_defaults"],
 
+    init_rc: ["vsomeip_daemon.rc"],
+        
     srcs: [
         "src/vsomeip_daemon_main.cpp"
     ],
+    
     local_include_dirs: [
-       "include"
+    "include",
     ]
 }
