@@ -16,28 +16,24 @@
             "id" : "0x1500"
         },
         {
+            "name" : "DemoApp1Service",
+            "id" : "0x1277"
+        },
+        {
+            "name" : "DemoApp1Client",
+            "id" : "0x1278"
+        },
+        {
+            "name": "vsomeip_vlan1500Test",
+            "id": "ox1279"
+        },
+        {
             "name" : "location-fidl-client",
             "id" : "0x303"
         },
         {
             "name" : "location-fidl-test-client",
             "id" : "0x304"
-        },
-        {
-            "name" : "SimSvcTest",
-            "id" : "0x1301"
-        },
-        {
-            "name" : "radioSvcTest",
-            "id" : "0x1201"
-        },
-        {
-            "name" : "InfoSvcTest",
-            "id" : "0x1401"
-        },
-        {
-            "name" : "MngdConnSvcTest",
-            "id" : "0x1501"
         },
         {
             "name" : "sensor-fidl-client",
@@ -48,16 +44,20 @@
             "id" : "0x30D"
         },
         {
-            "name" : "DemoApp1Service",
-            "id" : "0x1277"
+            "name" : "radioSvcTest",
+            "id" : "0x1201"
         },
         {
-            "name" : "DemoApp1Client",
-            "id" : "0x1278"
+            "name" : "SimSvcTest",
+            "id" : "0x1301"
         },
         {
-            "name": "vsomeip_vlan1500Test",
-            "id": "60"
+            "name" : "InfoSvcTest",
+            "id" : "0x1401"
+        },
+        {
+            "name" : "MngdConnSvcTest",
+            "id" : "0x1501"
         },
         {
             "name": "Connectivity_OCM",
@@ -88,10 +88,6 @@
             "id": "0x1607"
         },
         {
-            "name": "Connectivity_CAC",
-            "id": "0x1607"
-        },
-        {
             "name": "Connectivity_InitialSequence",
             "id": "0x1608"
         },
@@ -112,6 +108,10 @@
             "id": "0x1704"
         },
         {
+            "name": "diagdisplayecu",
+            "id": "0x1705"
+        },
+        {
             "name": "vhal-someip",
             "id": "0x1801"
         }
@@ -121,7 +121,7 @@
         {
             "service" : "0x1234",
             "instance" : "0x5678",
-            "unreliable" : "30509",
+            "unreliable" : [ "30509" ],
             "unicast" : "192.168.114.42",
             "someip-tp": {
                 "client-to-service": ["0x7532"]
@@ -171,8 +171,8 @@
         {
             "service": "627",
             "instance": "1",
-            "unreliable": "30515",
-            "reliable": "30516",
+            "unreliable": [ "30515" ],
+            "reliable": [ "30516" ],
             "events" :
             [
                 {
@@ -195,72 +195,60 @@
         {
             "service" : "0xEE00",
             "instance" : "0x01",
-            "unreliable":
-            {    "port" : "30701"    }
+            "unreliable": [ "30701" ]
         },
         {
             "service" : "0xEE01",
             "instance" : "0x1",
-            "unreliable" :
-            {    "port" : "30701"    }
+            "unreliable" : [ "30701" ]
         },
         {
             "service": "0xed80",
             "instance": "0x1",
-            "unreliable": [
-            "30701"
-            ]
+            "unreliable": [ "30701" ]
         },
         {
             "service": "0xed81",
             "instance": "0x1",
-            "unreliable": [
-            "30701"
-            ]
+            "unreliable": [ "30701" ]
         },
         {
             "service": "0xed82",
             "instance": "0x1",
-            "unreliable": [
-            "30701"
-            ]
+            "unreliable": [ "30701" ]
         },
         {
             "service": "0xed83",
             "instance": "0x1",
-            "unreliable": [
-            "30701"
-            ]
+            "unreliable": [ "30701" ]
         },
         {
-            "service": "0xFF00",
+            "service": "0x406B",
             "instance": "0x2",
-            "unreliable": [
-            "30701"
-            ]
-        },
-        {
-            "service": "0xFF01",
-            "instance": "0x2",
-            "unreliable": [
-            "30701"
-            ]
-        },
-        {
-            "service": "0xFF02",
-            "instance": "0x2",
-            "unreliable": [
-            "30701"
-            ]
+            "unreliable": [ "30701" ]
         },
         {
             "service": "0xFF52",
             "instance": "0x2",
-            "unreliable": [
-            "30701"
-            ]
+            "unreliable": [ "30701" ]
+        },
+        {
+            "service": "0xFF00",
+            "instance": "0x2",
+            "unreliable": [ "30701" ]
+        },
+        {
+            "service": "0xFF01",
+            "instance": "0x2",
+            "unreliable": [ "30701" ]
+        },
+        {
+            "service": "0xFF02",
+            "instance": "0x2",
+            "unreliable": [ "30701" ]
         }
     ],
+    "max-payload-size-unreliable" : "15000",
     "routing" : "vsomeip_daemon_vlan1500",
     "network" : "vsomeip_vlan1500",
     "service-discovery" :
@@ -270,11 +258,11 @@
         "port" : "30490",
         "protocol" : "udp",
         "initial_delay_min" : "10",
-        "initial_delay_max" : "100",
-        "repetitions_base_delay" : "200",
-        "repetitions_max" : "3",
+        "initial_delay_max" : "50",
+        "repetitions_base_delay" : "100",
+        "repetitions_max" : "4",
+        "cyclic_offer_delay" : "1000",
         "ttl" : "3",
-        "cyclic_offer_delay" : "2000",
         "request_response_delay" : "1500"
     }
 }
