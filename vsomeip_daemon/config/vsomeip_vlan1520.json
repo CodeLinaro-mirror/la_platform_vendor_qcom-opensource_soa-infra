@@ -53,10 +53,10 @@
         {
             "service" : "0x1234",
             "instance" : "0x5678",
-            "unreliable" : [ "30502" ],
-            "unicast" : "192.168.114.42",
+            "unreliable" : "30502",
+            "unicast" : "192.168.116.42",
             "someip-tp": {
-                "service-to-client": ["0x7532"]
+                "client-to-service": ["0x7532"]
             },
             "events" :
             [

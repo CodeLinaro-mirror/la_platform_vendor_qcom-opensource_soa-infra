@@ -121,7 +121,7 @@
         {
             "service" : "0x1234",
             "instance" : "0x5678",
-            "unreliable" : [ "30509" ],
+            "unreliable" : "30509",
             "unicast" : "192.168.114.42",
             "someip-tp": {
                 "client-to-service": ["0x7532"]
@@ -171,8 +171,8 @@
         {
             "service": "627",
             "instance": "1",
-            "unreliable": [ "30515" ],
-            "reliable": [ "30516" ],
+            "unreliable": "30515",
+            "reliable": "30516",
             "events" :
             [
                 {
