@@ -1,6 +1,6 @@
 {
-    "unicast" : "192.168.152.43",
-    "device"  : "emac0.1520",
+    "unicast" : "192.168.116.43",
+    "device"  : "eth0.1520",
     "netmask" : "255.255.255.0",
     "logging" :
     {
@@ -13,7 +13,7 @@
     [
         {
             "name" : "vsomeip_daemon_vlan1520",
-            "id" : "0x1520"
+            "id" : "0x1501"
         },
         {
             "name" : "DemoApp1Service",
@@ -22,6 +22,30 @@
         {
             "name" : "DemoApp1Client",
             "id" : "0x1278"
+        },
+        {
+            "name": "Confighub-Service",
+            "id": "0x1701"
+        },
+        {
+            "name": "Configwriter-Service",
+            "id": "0x1702"
+        },
+        {
+            "name": "diagmanager",
+            "id": "0x1703"
+        },
+        {
+            "name": "diag_reset",
+            "id": "0x1704"
+        },
+        {
+            "name": "diagdisplayecu",
+            "id": "0x1705"
+        },
+        {
+            "name": "vhal-someip",
+            "id": "0x1801"
         }
     ],
     "services" :
@@ -29,7 +53,8 @@
         {
             "service" : "0x1234",
             "instance" : "0x5678",
-            "unreliable" : "30509",
+            "unreliable" : [ "30502" ],
+            "unicast" : "192.168.114.42",
             "someip-tp": {
                 "service-to-client": ["0x7532"]
             },
@@ -59,7 +84,6 @@
                 {
                     "eventgroup" : "0x1B58",
                     "events" : [ "0x80F2"]
-
                 },
                 {
                     "eventgroup" : "0x1B59",
@@ -76,20 +100,49 @@
             ]
         }
     ],
+    "clients" :
+    [
+    	{
+            "service": "0x406B",
+            "instance": "0x2",
+            "unreliable": [ "30702" ]
+        },
+        {
+            "service": "0xFF52",
+            "instance": "0x2",
+            "unreliable": [ "30702" ]
+        },
+        {
+            "service": "0xFF00",
+            "instance": "0x2",
+            "unreliable": [ "30702" ]
+        },
+        {
+            "service": "0xFF01",
+            "instance": "0x2",
+            "unreliable": [ "30702" ]
+        },
+        {
+            "service": "0xFF02",
+            "instance": "0x2",
+            "unreliable": [ "30702" ]
+        }
+    ],
     "max-payload-size-unreliable" : "15000",
     "routing" : "vsomeip_daemon_vlan1520",
     "network" : "vsomeip_vlan1520",
     "service-discovery" :
     {
         "enable" : "true",
-        "multicast" : "237.50.20.1",
+        "multicast" : "237.52.0.1",
         "port" : "30490",
         "protocol" : "udp",
         "initial_delay_min" : "10",
-        "initial_delay_max" : "100",
-        "repetitions_base_delay" : "200",
-        "repetitions_max" : "3",
-        "cyclic_offer_delay" : "2000",
+        "initial_delay_max" : "50",
+        "repetitions_base_delay" : "100",
+        "repetitions_max" : "4",
+        "cyclic_offer_delay" : "1000",
+        "ttl" : "3",
         "request_response_delay" : "1500"
 
     }

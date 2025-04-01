@@ -1,25 +1,27 @@
 #
-#Copyright (c) 2025 Qualcomm Innovation Center, Inc. All rights reserved.
-#SPDX-License-Identifier: BSD-3-Clause-Clear
+# Copyright (c) 2025 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
 #
 
 on boot
     export COMMONAPI_CONFIG /vendor/etc/commonapi4someip_default_tp.ini
     export VSOMEIP_CONFIGURATION_vsomeip_daemon_vlan1500 /vendor/etc/vsomeip_vlan1500.json
+    export VSOMEIP_CONFIGURATION_vsomeip_daemon_vlan1520 /vendor/etc/vsomeip_vlan1520.json
 
-#Create directories for vsomeip_daemon services    
+#Create directories for vsomeip_daemon services
 on post-fs-data
     mkdir /data/vendor/someip 0770 vendor_soa vendor_soa
     chmod 0770 /data/vendor/someip
     mkdir /data/vendor/vsomeip_daemon 0770 vendor_soa vendor_soa
     chmod 0770 /data/vendor/vsomeip_daemon
 
-service vsomeip_daemon /vendor/bin/vsomeip_daemon
-    class main
+service vsomeip_daemon_vlan1500 /vendor/bin/vsomeip_daemon -n vlan1500
+    class late_start
     user vendor_soa
     group vendor_soa
-    disabled
 
-on property:sys.boot_completed=1
-    start vsomeip_daemon
-    
+service vsomeip_daemon_vlan1520 /vendor/bin/vsomeip_daemon -n vlan1520
+    class late_start
+    user vendor_soa
+    group vendor_soa
+
