@@ -25,7 +25,7 @@
         },
         {
             "name": "vsomeip_vlan1500Test",
-            "id": "ox1279"
+            "id": "0x1279"
         },
         {
             "name" : "location-fidl-client",
@@ -90,30 +90,6 @@
         {
             "name": "Connectivity_InitialSequence",
             "id": "0x1608"
-        },
-        {
-            "name": "Confighub-Service",
-            "id": "0x1701"
-        },
-        {
-            "name": "Configwriter-Service",
-            "id": "0x1702"
-        },
-        {
-            "name": "diagmanager",
-            "id": "0x1703"
-        },
-        {
-            "name": "diag_reset",
-            "id": "0x1704"
-        },
-        {
-            "name": "diagdisplayecu",
-            "id": "0x1705"
-        },
-        {
-            "name": "vhal-someip",
-            "id": "0x1801"
         }
     ],
     "services" :
@@ -188,6 +164,26 @@
                     "events" : [ "32896" ]
                 }
             ]
+        },
+        {
+            "service": "8352",
+            "instance": "1",
+            "unreliable": "30501",
+            "events" :
+            [
+                {
+                    "event" : "33516",
+                    "is_field" : "false",
+                    "is_reliable" : "false"
+                }
+            ],
+            "eventgroups" :
+            [
+                {
+                    "eventgroup" : "1",
+                    "events" : [ "33516" ]
+                }
+            ]
         }
     ],
     "clients" :
@@ -223,28 +219,13 @@
             "unreliable": [ "30701" ]
         },
         {
-            "service": "0x406B",
-            "instance": "0x2",
+            "service": "0x2091",
+            "instance": "0x1",
             "unreliable": [ "30701" ]
         },
         {
-            "service": "0xFF52",
-            "instance": "0x2",
-            "unreliable": [ "30701" ]
-        },
-        {
-            "service": "0xFF00",
-            "instance": "0x2",
-            "unreliable": [ "30701" ]
-        },
-        {
-            "service": "0xFF01",
-            "instance": "0x2",
-            "unreliable": [ "30701" ]
-        },
-        {
-            "service": "0xFF02",
-            "instance": "0x2",
+            "service": "0x20B8",
+            "instance": "0x1",
             "unreliable": [ "30701" ]
         }
     ],
