@@ -113,17 +113,17 @@
             "unreliable": [ "30702" ]
         },
         {
-            "service": "0xFF00",
+            "service": "0xFFF0",
             "instance": "0x2",
             "unreliable": [ "30702" ]
         },
         {
-            "service": "0xFF01",
+            "service": "0xFFF1",
             "instance": "0x2",
             "unreliable": [ "30702" ]
         },
         {
-            "service": "0xFF02",
+            "service": "0xFFF2",
             "instance": "0x2",
             "unreliable": [ "30702" ]
         }
