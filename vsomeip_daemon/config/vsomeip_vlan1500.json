@@ -208,6 +208,15 @@
                     "events" : [ "33516" ]
                 }
             ]
+        },
+        {
+            "service": "0xFFF0",
+            "instance": "0x2",
+            "unreliable": [ "30702" ],
+            "unicast" : "192.168.114.42",
+            "someip-tp": {
+                "client-to-service": [ "914", "919", "922", "931" ]
+            }
         }
     ],
     "clients" :
