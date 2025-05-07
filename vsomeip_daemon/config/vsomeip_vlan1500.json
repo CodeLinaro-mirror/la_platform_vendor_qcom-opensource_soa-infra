@@ -1,0 +1,249 @@
+{
+    "unicast" : "192.168.114.2",
+    "device"  : "emac0.1500",
+    "netmask" : "255.255.255.0",
+    "logging" :
+    {
+        "level" : "debug",
+        "console" : "false",
+        "file" : { "enable" : "true", "path" : "/data/vendor/vsomeip_daemon/vsomeip_vlan1500.log" },
+        "dlt" : "false"
+    },
+    "applications" :
+    [
+        {
+            "name" : "vsomeip_daemon_vlan1500",
+            "id" : "0x1500"
+        },
+        {
+            "name" : "DemoApp1Service",
+            "id" : "0x1277"
+        },
+        {
+            "name" : "DemoApp1Client",
+            "id" : "0x1278"
+        },
+        {
+            "name": "vsomeip_vlan1500Test",
+            "id": "0x1279"
+        },
+        {
+            "name" : "location-fidl-client",
+            "id" : "0x303"
+        },
+        {
+            "name" : "location-fidl-test-client",
+            "id" : "0x304"
+        },
+        {
+            "name" : "sensor-fidl-client",
+            "id" : "0x30C"
+        },
+        {
+            "name" : "sensor-fidl-test-client",
+            "id" : "0x30D"
+        },
+        {
+            "name" : "radioSvcTest",
+            "id" : "0x1201"
+        },
+        {
+            "name" : "SimSvcTest",
+            "id" : "0x1301"
+        },
+        {
+            "name" : "InfoSvcTest",
+            "id" : "0x1401"
+        },
+        {
+            "name" : "MngdConnSvcTest",
+            "id" : "0x1501"
+        },
+        {
+            "name": "Connectivity_OCM",
+            "id": "0x1601"
+        },
+        {
+            "name": "Connectivity_OTA_Setup",
+            "id": "0x1602"
+        },
+        {
+            "name": "Connectivity_ModemStatus",
+            "id": "0x1603"
+        },
+        {
+            "name": "Connectivity_GPM",
+            "id": "0x1604"
+        },
+        {
+            "name": "Connectivity_VPA",
+            "id": "0x1605"
+        },
+        {
+            "name": "Connectivity_LogRelay",
+            "id": "0x1606"
+        },
+        {
+            "name": "Connectivity_CAC",
+            "id": "0x1607"
+        },
+        {
+            "name": "Connectivity_InitialSequence",
+            "id": "0x1608"
+        }
+    ],
+    "services" :
+    [
+        {
+            "service" : "0x1234",
+            "instance" : "0x5678",
+            "unreliable" : "30509",
+            "unicast" : "192.168.114.42",
+            "someip-tp": {
+                "client-to-service": ["0x7532"]
+            },
+            "events" :
+            [
+                {
+                    "event" : "0x80F2",
+                    "is_field" : "false"
+                },
+                {
+                    "event" : "0x80F3",
+                    "is_field" : "false"
+                },
+                {
+                    "event" : "0x80F4",
+                    "is_field" : "true",
+                    "update-cycle" : 2000
+                },
+                {
+                    "event" : "0x80F5",
+                    "is_field" : "true",
+                    "update-cycle" : 0
+                }
+            ],
+            "eventgroups" :
+            [
+                {
+                    "eventgroup" : "0x1B58",
+                    "events" : [ "0x80F2"]
+
+                },
+                {
+                    "eventgroup" : "0x1B59",
+                    "events" : [ "0x80F3" ]
+                },
+                {
+                    "eventgroup" : "0x1B5A",
+                    "events" : [ "0x80F4" ]
+                },
+                {
+                    "eventgroup" : "0x1B5B",
+                    "events" : [ "0x80F5" ]
+                }
+            ]
+        },
+        {
+            "service": "627",
+            "instance": "1",
+            "unreliable": "30515",
+            "reliable": "30516",
+            "events" :
+            [
+                {
+                    "event" : "32896",
+                    "is_field" : "false",
+                    "is_reliable" : "false"
+                }
+            ],
+            "eventgroups" :
+            [
+                {
+                    "eventgroup" : "1",
+                    "events" : [ "32896" ]
+                }
+            ]
+        },
+        {
+            "service": "8352",
+            "instance": "1",
+            "unreliable": "30501",
+            "events" :
+            [
+                {
+                    "event" : "33516",
+                    "is_field" : "false",
+                    "is_reliable" : "false"
+                }
+            ],
+            "eventgroups" :
+            [
+                {
+                    "eventgroup" : "1",
+                    "events" : [ "33516" ]
+                }
+            ]
+        }
+    ],
+    "clients" :
+     [
+        {
+            "service" : "0xEE00",
+            "instance" : "0x01",
+            "unreliable": [ "30701" ]
+        },
+        {
+            "service" : "0xEE01",
+            "instance" : "0x1",
+            "unreliable" : [ "30701" ]
+        },
+        {
+            "service": "0xed80",
+            "instance": "0x1",
+            "unreliable": [ "30701" ]
+        },
+        {
+            "service": "0xed81",
+            "instance": "0x1",
+            "unreliable": [ "30701" ]
+        },
+        {
+            "service": "0xed82",
+            "instance": "0x1",
+            "unreliable": [ "30701" ]
+        },
+        {
+            "service": "0xed83",
+            "instance": "0x1",
+            "unreliable": [ "30701" ]
+        },
+        {
+            "service": "0x2091",
+            "instance": "0x1",
+            "unreliable": [ "30701" ]
+        },
+        {
+            "service": "0x20B8",
+            "instance": "0x1",
+            "unreliable": [ "30701" ]
+        }
+    ],
+    "max-payload-size-unreliable" : "15000",
+    "routing" : "vsomeip_daemon_vlan1500",
+    "network" : "vsomeip_vlan1500",
+    "service-discovery" :
+    {
+        "enable" : "true",
+        "multicast" : "237.50.20.1",
+        "port" : "30490",
+        "protocol" : "udp",
+        "initial_delay_min" : "10",
+        "initial_delay_max" : "50",
+        "repetitions_base_delay" : "100",
+        "repetitions_max" : "4",
+        "cyclic_offer_delay" : "1000",
+        "ttl" : "3",
+        "request_response_delay" : "1500"
+    }
+}
