@@ -98,6 +98,15 @@
                     "events" : [ "0x80F5" ]
                 }
             ]
+        },
+        {
+            "service": "0xFFF0",
+            "instance": "0x2",
+            "unreliable": [ "30702" ],
+            "unicast" : "192.168.116.42",
+            "someip-tp": {
+                "client-to-service": [ "914", "919", "922", "931" ]
+            }
         }
     ],
     "clients" :
