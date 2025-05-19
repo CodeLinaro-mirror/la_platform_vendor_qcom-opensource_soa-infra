@@ -90,6 +90,30 @@
         {
             "name": "Connectivity_InitialSequence",
             "id": "0x1608"
+        },
+        {
+            "name": "Confighub-Service",
+            "id": "0x1701"
+        },
+        {
+            "name": "Configwriter-Service",
+            "id": "0x1702"
+        },
+        {
+            "name": "diagmanager",
+            "id": "0x1703"
+        },
+        {
+            "name": "diag_reset",
+            "id": "0x1704"
+        },
+        {
+            "name": "diagdisplayecu",
+            "id": "0x1705"
+        },
+        {
+            "name": "vhal-someip",
+            "id": "0x1801"
         }
     ],
     "services" :
@@ -184,6 +208,15 @@
                     "events" : [ "33516" ]
                 }
             ]
+        },
+        {
+            "service": "0xFFF0",
+            "instance": "0x2",
+            "unreliable": [ "30702" ],
+            "unicast" : "192.168.114.42",
+            "someip-tp": {
+                "client-to-service": [ "914", "919", "922", "931" ]
+            }
         }
     ],
     "clients" :
@@ -227,6 +260,31 @@
             "service": "0x20B8",
             "instance": "0x1",
             "unreliable": [ "30701" ]
+        },
+            	{
+            "service": "0x406B",
+            "instance": "0x2",
+            "unreliable": [ "30702" ]
+        },
+        {
+            "service": "0xFF52",
+            "instance": "0x2",
+            "unreliable": [ "30702" ]
+        },
+        {
+            "service": "0xFFF0",
+            "instance": "0x2",
+            "unreliable": [ "30702" ]
+        },
+        {
+            "service": "0xFFF1",
+            "instance": "0x2",
+            "unreliable": [ "30702" ]
+        },
+        {
+            "service": "0xFFF2",
+            "instance": "0x2",
+            "unreliable": [ "30702" ]
         }
     ],
     "max-payload-size-unreliable" : "15000",
