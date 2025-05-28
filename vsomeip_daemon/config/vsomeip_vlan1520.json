@@ -100,9 +100,9 @@
             ]
         },
         {
-            "service": "0xFFF0",
-            "instance": "0x2",
-            "unreliable": [ "30702" ],
+            "service": "65520",
+            "instance": "2",
+            "unreliable": "30502",
             "unicast" : "192.168.116.42",
             "someip-tp": {
                 "client-to-service": [ "914", "919", "922", "931" ]
@@ -111,29 +111,29 @@
     ],
     "clients" :
     [
-    	{
-            "service": "0x406B",
-            "instance": "0x2",
+        {
+            "service": "16491",
+            "instance": "2",
             "unreliable": [ "30702" ]
         },
         {
-            "service": "0xFF52",
-            "instance": "0x2",
+            "service": "65362",
+            "instance": "2",
             "unreliable": [ "30702" ]
         },
         {
-            "service": "0xFFF0",
-            "instance": "0x2",
+            "service": "65520",
+            "instance": "2",
             "unreliable": [ "30702" ]
         },
         {
-            "service": "0xFFF1",
-            "instance": "0x2",
+            "service": "65521",
+            "instance": "2",
             "unreliable": [ "30702" ]
         },
         {
-            "service": "0xFFF2",
-            "instance": "0x2",
+            "service": "65522",
+            "instance": "2",
             "unreliable": [ "30702" ]
         }
     ],

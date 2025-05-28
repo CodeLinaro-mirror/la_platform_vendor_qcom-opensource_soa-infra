@@ -210,84 +210,111 @@
             ]
         },
         {
-            "service": "0xFFF0",
-            "instance": "0x2",
-            "unreliable": [ "30702" ],
+            "service": "65520",
+            "instance": "2",
+            "unreliable": "30502",
             "unicast" : "192.168.114.42",
             "someip-tp": {
                 "client-to-service": [ "914", "919", "922", "931" ]
+            }
+        },
+        {
+            "service": "8337",
+            "instance": "1",
+            "unreliable": "30501",
+            "unicast" : "192.168.114.3",
+            "someip-tp": {
+                "client-to-service": [ "586", "950", "967" ]
+            }
+        },
+        {
+            "service": "8376",
+            "instance": "1",
+            "unreliable": "30501",
+            "unicast" : "192.168.114.3",
+            "someip-tp": {
+                "client-to-service": [ "1007" ]
+            }
+        },
+        {
+            "service": "60929",
+            "instance": "1",
+            "unreliable": "30501",
+            "unicast" : "192.168.114.3",
+            "someip-tp": {
+                "client-to-service": [ "103" ]
             }
         }
     ],
     "clients" :
      [
         {
-            "service" : "0xEE00",
-            "instance" : "0x01",
+            "service" : "60928",
+            "instance" : "1",
             "unreliable": [ "30701" ]
         },
         {
-            "service" : "0xEE01",
-            "instance" : "0x1",
+            "service" : "60929",
+            "instance" : "1",
             "unreliable" : [ "30701" ]
         },
         {
-            "service": "0xed80",
-            "instance": "0x1",
+            "service": "60800",
+            "instance": "1",
             "unreliable": [ "30701" ]
         },
         {
-            "service": "0xed81",
-            "instance": "0x1",
+            "service": "60801",
+            "instance": "1",
             "unreliable": [ "30701" ]
         },
         {
-            "service": "0xed82",
-            "instance": "0x1",
+            "service": "60802",
+            "instance": "1",
             "unreliable": [ "30701" ]
         },
         {
-            "service": "0xed83",
-            "instance": "0x1",
+            "service": "60803",
+            "instance": "1",
             "unreliable": [ "30701" ]
         },
         {
-            "service": "0x2091",
-            "instance": "0x1",
+            "service": "8337",
+            "instance": "1",
             "unreliable": [ "30701" ]
         },
         {
-            "service": "0x20B8",
-            "instance": "0x1",
+            "service": "8376",
+            "instance": "1",
             "unreliable": [ "30701" ]
         },
-            	{
-            "service": "0x406B",
-            "instance": "0x2",
+        {
+            "service": "16491",
+            "instance": "2",
             "unreliable": [ "30702" ]
         },
         {
-            "service": "0xFF52",
-            "instance": "0x2",
+            "service": "65362",
+            "instance": "2",
             "unreliable": [ "30702" ]
         },
         {
-            "service": "0xFFF0",
-            "instance": "0x2",
+            "service": "65520",
+            "instance": "2",
             "unreliable": [ "30702" ]
         },
         {
-            "service": "0xFFF1",
-            "instance": "0x2",
+            "service": "65521",
+            "instance": "2",
             "unreliable": [ "30702" ]
         },
         {
-            "service": "0xFFF2",
-            "instance": "0x2",
+            "service": "65522",
+            "instance": "2",
             "unreliable": [ "30702" ]
         }
     ],
-    "max-payload-size-unreliable" : "15000",
+    "max-payload-size-unreliable" : "255300",
     "routing" : "vsomeip_daemon_vlan1500",
     "network" : "vsomeip_vlan1500",
     "service-discovery" :
