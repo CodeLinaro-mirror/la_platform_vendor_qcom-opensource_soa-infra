@@ -193,6 +193,9 @@
             "service": "8352",
             "instance": "1",
             "unreliable": "30501",
+            "someip-tp": {
+                "service-to-client": [ "743" ]
+            },
             "events" :
             [
                 {
@@ -208,15 +211,6 @@
                     "events" : [ "33516" ]
                 }
             ]
-        },
-        {
-            "service": "65520",
-            "instance": "2",
-            "unreliable": "30502",
-            "unicast" : "192.168.114.42",
-            "someip-tp": {
-                "client-to-service": [ "914", "919", "922", "931" ]
-            }
         },
         {
             "service": "8337",
@@ -290,26 +284,6 @@
         },
         {
             "service": "16491",
-            "instance": "2",
-            "unreliable": [ "30702" ]
-        },
-        {
-            "service": "65362",
-            "instance": "2",
-            "unreliable": [ "30702" ]
-        },
-        {
-            "service": "65520",
-            "instance": "2",
-            "unreliable": [ "30702" ]
-        },
-        {
-            "service": "65521",
-            "instance": "2",
-            "unreliable": [ "30702" ]
-        },
-        {
-            "service": "65522",
             "instance": "2",
             "unreliable": [ "30702" ]
         }
