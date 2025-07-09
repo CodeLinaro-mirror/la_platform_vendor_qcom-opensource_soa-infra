@@ -231,6 +231,34 @@
             }
         },
         {
+            "service": "8366",
+            "instance": "1",
+            "unreliable": "30501",
+            "someip-tp": {
+                "service-to-client": [ "1073", "33906" ]
+            },
+            "events" :
+            [
+                {
+                    "event" : "33906",
+                    "is_field" : "false",
+                    "is_reliable" : "false"
+                },
+                {
+                    "event" : "33907",
+                    "is_field" : "false",
+                    "is_reliable" : "false"
+                }
+            ],
+            "eventgroups" :
+            [
+                {
+                    "eventgroup" : "1",
+                    "events" : [ "33906","33907" ]
+                }
+            ]
+        },
+        {
             "service": "60929",
             "instance": "1",
             "unreliable": "30501",
