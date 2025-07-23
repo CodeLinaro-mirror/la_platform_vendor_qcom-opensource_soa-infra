@@ -6,7 +6,7 @@
     {
         "level" : "debug",
         "console" : "false",
-        "file" : { "enable" : "true", "path" : "/data/vendor/vsomeip_daemon/vsomeip_vlan1500.log" },
+        "file" : { "enable" : "true", "path" : "/data/vendor/someip/vsomeip_vlan1500.log" },
         "dlt" : "false"
     },
     "applications" :
