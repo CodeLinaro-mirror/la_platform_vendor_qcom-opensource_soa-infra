@@ -6,7 +6,7 @@
     {
         "level" : "debug",
         "console" : "false",
-        "file" : { "enable" : "true", "path" : "/data/vendor/vsomeip_daemon/vsomeip_vlan1520.log" },
+        "file" : { "enable" : "true", "path" : "/data/vendor/someip/vsomeip_vlan1520.log" },
         "dlt" : "false"
     },
     "applications" :
@@ -105,7 +105,16 @@
             "unreliable": "30502",
             "unicast" : "192.168.116.42",
             "someip-tp": {
-                "client-to-service": [ "914", "919", "922", "931" ]
+                "client-to-service": [ "914", "922", "931" ]
+            }
+        },
+        {
+            "service": "16491",
+            "instance": "2",
+            "unreliable": "30502",
+            "unicast" : "192.168.116.42",
+            "someip-tp": {
+                "client-to-service": [ "1071", "863" ]
             }
         }
     ],
