@@ -6,22 +6,38 @@
     {
         "level" : "debug",
         "console" : "false",
-        "file" : { "enable" : "true", "path" : "/data/vendor/someip/vsomeip_eth0.log" },
+        "file" : { "enable" : "true", "path" : "/data/vendor/someip_daemon/vsomeip_eth0.log" },
         "dlt" : "false"
     },
     "applications" :
     [
         {
             "name" : "vsomeip_daemon_eth0",
-            "id" : "0x1520"
+            "id" : "0x5200"
         },
         {
             "name" : "DemoApp1Service",
-            "id" : "0x1277"
+            "id" : "0x5201"
         },
         {
             "name" : "DemoApp1Client",
-            "id" : "0x1278"
+            "id" : "0x5202"
+        },
+        {
+            "name" : "location-fidl-client",
+            "id" : "0x5203"
+        },
+        {
+            "name" : "location-fidl-test-client",
+            "id" : "0x5204"
+        },
+        {
+            "name" : "sensor-fidl-client",
+            "id" : "0x5205"
+        },
+        {
+            "name" : "sensor-fidl-test-client",
+            "id" : "0x5206"
         }
     ],
     "services" :
@@ -76,13 +92,26 @@
             ]
         }
     ],
+    "clients" :
+     [
+        {
+            "service" : "0xEE00",
+            "instance" : "1",
+            "unreliable": [ "30701" ]
+        },
+        {
+            "service" : "0xEE01",
+            "instance" : "1",
+            "unreliable" : [ "30701" ]
+        }
+    ],
     "max-payload-size-unreliable" : "15000",
     "routing" : "vsomeip_daemon_eth0",
     "network" : "vsomeip_eth0",
     "service-discovery" :
     {
         "enable" : "true",
-        "multicast" : "237.50.20.1",
+        "multicast" : "224.244.224.245",
         "port" : "30490",
         "protocol" : "udp",
         "initial_delay_min" : "10",
