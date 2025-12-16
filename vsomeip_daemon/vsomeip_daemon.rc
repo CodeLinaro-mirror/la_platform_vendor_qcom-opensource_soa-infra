@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2025 Qualcomm Innovation Center, Inc. All rights reserved.
+# Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 #
 
@@ -20,12 +20,27 @@ on post-fs-data && property:ro.product.name=gen4_gvm_cdccomm
     mkdir /data/vendor/someip 0660 vendor_soa vendor_soa
     chmod 0660 /data/vendor/someip
 
+on post-fs-data && property:ro.product.name=gen4_gvm
+    export COMMONAPI_CONFIG /vendor/etc/commonapi4someip_default_tp.ini
+    export VSOMEIP_CONFIGURATION_vsomeip_daemon_eth0 /vendor/etc/vsomeip_eth0.json
+    mkdir /dev/someip 0770 vendor_soa vendor_soa
+    chmod 0770 /dev/someip
+    mkdir /data/vendor/someip_daemon 0660 vendor_soa vendor_soa
+    chmod 0660 /data/vendor/someip_daemon
+    write /dev/kmsg "boot_kpi: M - USER vsomeip_daemon_eth0 Start"
+    start vsomeip_daemon_eth0
+
 service vsomeip_daemon_vlan1500 /vendor/bin/vsomeip_daemon -n vlan1500
     user vendor_soa
     group vendor_soa
     disabled
 
 service vsomeip_daemon_vlan1520 /vendor/bin/vsomeip_daemon -n vlan1520
+    user vendor_soa
+    group vendor_soa
+    disabled
+
+service vsomeip_daemon_eth0 /vendor/bin/vsomeip_daemon -n eth0
     user vendor_soa
     group vendor_soa
     disabled
