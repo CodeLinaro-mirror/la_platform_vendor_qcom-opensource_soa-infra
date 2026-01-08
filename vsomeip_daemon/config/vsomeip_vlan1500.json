@@ -13,107 +13,107 @@
     [
         {
             "name" : "vsomeip_daemon_vlan1500",
-            "id" : "0x1500"
+            "id" : "0x0200"
         },
         {
             "name" : "DemoApp1Service",
-            "id" : "0x1277"
+            "id" : "0x0201"
         },
         {
             "name" : "DemoApp1Client",
-            "id" : "0x1278"
+            "id" : "0x0202"
         },
         {
             "name": "vsomeip_vlan1500Test",
-            "id": "0x1279"
+            "id": "0x0203"
         },
         {
             "name" : "location-fidl-client",
-            "id" : "0x303"
+            "id" : "0x0210"
         },
         {
             "name" : "location-fidl-test-client",
-            "id" : "0x304"
+            "id" : "0x0211"
         },
         {
             "name" : "sensor-fidl-client",
-            "id" : "0x30C"
+            "id" : "0x0220"
         },
         {
             "name" : "sensor-fidl-test-client",
-            "id" : "0x30D"
+            "id" : "0x0221"
         },
         {
             "name" : "radioSvcTest",
-            "id" : "0x1201"
+            "id" : "0x0230"
         },
         {
             "name" : "SimSvcTest",
-            "id" : "0x1301"
+            "id" : "0x0231"
         },
         {
             "name" : "InfoSvcTest",
-            "id" : "0x1401"
+            "id" : "0x0232"
         },
         {
             "name" : "MngdConnSvcTest",
-            "id" : "0x1501"
+            "id" : "0x0233"
         },
         {
             "name": "Connectivity_OCM",
-            "id": "0x1601"
+            "id": "0x0240"
         },
         {
             "name": "Connectivity_OTA_Setup",
-            "id": "0x1602"
+            "id": "0x0241"
         },
         {
             "name": "Connectivity_ModemStatus",
-            "id": "0x1603"
+            "id": "0x0242"
         },
         {
             "name": "Connectivity_GPM",
-            "id": "0x1604"
+            "id": "0x0243"
         },
         {
             "name": "Connectivity_VPA",
-            "id": "0x1605"
+            "id": "0x0244"
         },
         {
             "name": "Connectivity_LogRelay",
-            "id": "0x1606"
+            "id": "0x0245"
         },
         {
             "name": "Connectivity_CAC",
-            "id": "0x1607"
+            "id": "0x0246"
         },
         {
             "name": "Connectivity_InitialSequence",
-            "id": "0x1608"
+            "id": "0x0247"
         },
         {
             "name": "Confighub-Service",
-            "id": "0x1701"
+            "id": "0x0250"
         },
         {
             "name": "Configwriter-Service",
-            "id": "0x1702"
+            "id": "0x0251"
         },
         {
             "name": "diagmanager",
-            "id": "0x1703"
+            "id": "0x0260"
         },
         {
             "name": "diag_reset",
-            "id": "0x1704"
+            "id": "0x0261"
         },
         {
             "name": "diagdisplayecu",
-            "id": "0x1705"
+            "id": "0x0262"
         },
         {
             "name": "vhal-someip",
-            "id": "0x1801"
+            "id": "0x0270"
         }
     ],
     "services" :
@@ -227,7 +227,7 @@
             "unreliable": "30501",
             "unicast" : "192.168.114.3",
             "someip-tp": {
-                "client-to-service": [ "1007" ]
+                "client-to-service": [ "1007", "1093" ]
             }
         },
         {
@@ -309,14 +309,9 @@
             "service": "8376",
             "instance": "1",
             "unreliable": [ "30701" ]
-        },
-        {
-            "service": "16491",
-            "instance": "2",
-            "unreliable": [ "30702" ]
         }
     ],
-    "max-payload-size-unreliable" : "255300",
+    "max-payload-size-unreliable" : "500000",
     "routing" : "vsomeip_daemon_vlan1500",
     "network" : "vsomeip_vlan1500",
     "service-discovery" :

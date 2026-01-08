@@ -13,39 +13,43 @@
     [
         {
             "name" : "vsomeip_daemon_vlan1520",
-            "id" : "0x1501"
+            "id" : "0x02F0"
         },
         {
             "name" : "DemoApp1Service",
-            "id" : "0x1277"
+            "id" : "0x0201"
         },
         {
             "name" : "DemoApp1Client",
-            "id" : "0x1278"
+            "id" : "0x0202"
         },
         {
             "name": "Confighub-Service",
-            "id": "0x1701"
+            "id": "0x0250"
         },
         {
             "name": "Configwriter-Service",
-            "id": "0x1702"
+            "id": "0x0251"
         },
         {
             "name": "diagmanager",
-            "id": "0x1703"
+            "id": "0x0260"
         },
         {
             "name": "diag_reset",
-            "id": "0x1704"
+            "id": "0x0261"
         },
         {
             "name": "diagdisplayecu",
-            "id": "0x1705"
+            "id": "0x0262"
         },
         {
             "name": "vhal-someip",
-            "id": "0x1801"
+            "id": "0x0270"
+        },
+        {
+            "name": "factorycmd_service_FVM",
+            "id": "0x02E0"
         }
     ],
     "services" :
@@ -105,7 +109,7 @@
             "unreliable": "30502",
             "unicast" : "192.168.116.42",
             "someip-tp": {
-                "client-to-service": [ "914", "922", "931" ]
+                "client-to-service": [ "914", "922", "931", "1095", "1098", "1099" ]
             }
         },
         {
@@ -115,6 +119,15 @@
             "unicast" : "192.168.116.42",
             "someip-tp": {
                 "client-to-service": [ "1071", "863" ]
+            }
+        },
+        {
+            "service": "65521",
+            "instance": "2",
+            "unreliable": "30502",
+            "unicast" : "192.168.116.42",
+            "someip-tp": {
+                "client-to-service": [ "1128" ]
             }
         }
     ],
@@ -144,9 +157,14 @@
             "service": "65522",
             "instance": "2",
             "unreliable": [ "30702" ]
-        }
+        },
+        {
+            "service" : "65529",
+            "instance" : "1",
+            "unreliable" : ["30702"]
+       }
     ],
-    "max-payload-size-unreliable" : "15000",
+    "max-payload-size-unreliable" : "500000",
     "routing" : "vsomeip_daemon_vlan1520",
     "network" : "vsomeip_vlan1520",
     "service-discovery" :
@@ -162,6 +180,5 @@
         "cyclic_offer_delay" : "1000",
         "ttl" : "3",
         "request_response_delay" : "1500"
-
     }
 }
