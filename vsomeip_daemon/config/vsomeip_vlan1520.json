@@ -118,7 +118,7 @@
             "unreliable": "30502",
             "unicast" : "192.168.116.42",
             "someip-tp": {
-                "client-to-service": [ "1071", "863" ]
+                "client-to-service": [ "1071" ]
             }
         },
         {
