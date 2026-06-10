@@ -127,7 +127,7 @@
             "unreliable": "30502",
             "unicast" : "192.168.116.42",
             "someip-tp": {
-                "client-to-service": [ "1128" ]
+                "client-to-service": [ "1126", "1128" ]
             }
         }
     ],
@@ -137,6 +137,11 @@
             "service": "16491",
             "instance": "2",
             "unreliable": [ "30702" ]
+        },
+        {
+            "service": "65289",
+            "instance": "1",
+            "unreliable": [ "30701" ]
         },
         {
             "service": "65362",
@@ -162,7 +167,7 @@
             "service" : "65529",
             "instance" : "1",
             "unreliable" : ["30702"]
-       }
+        }
     ],
     "max-payload-size-unreliable" : "500000",
     "routing" : "vsomeip_daemon_vlan1520",
