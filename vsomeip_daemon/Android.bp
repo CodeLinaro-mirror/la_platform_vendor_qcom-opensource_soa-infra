@@ -1,90 +1,61 @@
-soong_config_bool_variable {
-    name: "qti_android_version_above_16",
-}
-
 soong_config_module_type {
-    name: "qti_prebuilt_etc",
-    module_type: "prebuilt_etc",
+    name: "vsomeip_daemon_prebuilt_etc_defaults",
+    module_type: "prebuilt_defaults",
     config_namespace: "qti",
     bool_variables: ["qti_android_version_above_16"],
-    properties: [
-        "installable",
-    ],
+    properties: ["installable"],
 }
 
-qti_prebuilt_etc {
-    name: "vsomeip_daemon_vsomeip_vlan1500_config",
-    vendor: true,
-    filename_from_src: true,
-    src:"config/vsomeip_vlan1500.json",
+vsomeip_daemon_prebuilt_etc_defaults{
+    name: "vsomeip_daemon_config_defaults",
     soong_config_variables: {
         qti_android_version_above_16: {
-            installable: false,
-            conditions_default: {
             installable: true,
+            conditions_default: {
+            installable: false,
            },
         },
     },
 }
 
-qti_prebuilt_etc {
+prebuilt_etc {
+    name: "vsomeip_daemon_vsomeip_vlan1500_config",
+    defaults: ["vsomeip_daemon_config_defaults"],
+    vendor: true,
+    filename_from_src: true,
+    src:"config/vsomeip_vlan1500.json",
+}
+
+prebuilt_etc {
     name: "vsomeip_daemon_vsomeip_vlan1520_config",
+    defaults: ["vsomeip_daemon_config_defaults"],
     vendor: true,
     filename_from_src: true,
     src: "config/vsomeip_vlan1520.json",
-    soong_config_variables: {
-        qti_android_version_above_16: {
-            installable: false,
-            conditions_default: {
-	    installable: true,
-            },
-        },
-    },
 }
 
-qti_prebuilt_etc {
+prebuilt_etc {
     name: "vsomeip_daemon_vsomeip_eth0_config",
+    defaults: ["vsomeip_daemon_config_defaults"],
     vendor: true,
     filename_from_src: true,
     src: "config/vsomeip_eth0.json",
-    soong_config_variables: {
-        qti_android_version_above_16: {
-            installable: false,
-            conditions_default: {
-	    installable: true,
-            },
-        },
-    },
 }
 
-qti_prebuilt_etc {
+prebuilt_etc {
     name: "vsomeip_daemon_commonapi4someip_default_no_tp",
+    defaults: ["vsomeip_daemon_config_defaults"],
     vendor: true,
     filename_from_src: true,
     src: "config/commonapi4someip_default_no_tp.ini",
-    soong_config_variables: {
-        qti_android_version_above_16: {
-            installable: false,
-            conditions_default: {
-	    installable: true,
-            },
-        },
-    },
 }
 
-qti_prebuilt_etc {
+prebuilt_etc {
     name: "vsomeip_daemon_commonapi4someip_default_tp",
+    defaults: ["vsomeip_daemon_config_defaults"],
     vendor: true,
     filename_from_src: true,
     src: "config/commonapi4someip_default_tp.ini",
-    soong_config_variables: {
-        qti_android_version_above_16: {
-            installable: false,
-            conditions_default: {
-	    installable: true,
-            },
-        },
-    },
 }
 
 cc_defaults {
