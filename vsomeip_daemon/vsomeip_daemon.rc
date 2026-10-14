@@ -34,13 +34,16 @@ service vsomeip_daemon_vlan1500 /vendor/bin/vsomeip_daemon -n vlan1500
     user vendor_soa
     group vendor_soa
     disabled
+    shutdown critical
 
 service vsomeip_daemon_vlan1520 /vendor/bin/vsomeip_daemon -n vlan1520
     user vendor_soa
     group vendor_soa
     disabled
+    shutdown critical
 
 service vsomeip_daemon_eth0 /vendor/bin/vsomeip_daemon -n eth0
     user vendor_soa
     group vendor_soa
     disabled
+    shutdown critical
